@@ -418,7 +418,7 @@ const QuickViewModal = () => {
                       fill=""
                     />
                   </svg>
-                  Add to Wishlist
+                  Thêm vào yêu thích
                 </button>
               </div>
             </div>

@@ -2,47 +2,42 @@ import { Testimonial } from "@/types/testimonial";
 
 const testimonialsData: Testimonial[] = [
   {
-    review: `Lorem ipsum dolor sit amet, adipiscing elit. Donec
-    malesuada justo vitaeaugue suscipit beautiful vehicula`,
-    authorName: "Davis Dorwart",
+    review: `Mình thường có thói quen lên QReview xem đánh giá trước khi mua, vì đọc review ở đây khá chi tiết và dễ hiểu. Chỉ cần xem vài đánh giá là mình biết sản phẩm có phù hợp với nhu cầu hay không.`,
+    authorName: "Nguyễn Minh Tuấn",
     authorImg: "/images/users/user-01.jpg",
-    authorRole: "Serial Entrepreneur",
+    authorRole: "Chủ shop kinh doanh online",
   },
   {
-    review: `Lorem ipsum dolor sit amet, adipiscing elit. Donec
-    malesuada justo vitaeaugue suscipit beautiful vehicula`,
-    authorName: "Wilson Dias",
+    review: `Trước đây mình hay mua theo quảng cáo nên nhiều lần không đúng kỳ vọng. Từ khi biết QReview, mình có thêm góc nhìn thực tế hơn nên mua hàng cũng yên tâm hơn.`,
+    authorName: "Trần Thị Thu Hà",
     authorImg: "/images/users/user-02.jpg",
-    authorRole: "Backend Developer",
+    authorRole: "Nhân viên văn phòng",
   },
   {
-    review: `Lorem ipsum dolor sit amet, adipiscing elit. Donec
-    malesuada justo vitaeaugue suscipit beautiful vehicula`,
-    authorName: "Miracle Exterm",
+    review: `Mình thích QReview ở chỗ review khá thẳng thắn, có nói rõ ưu và nhược điểm. Đọc xong là hình dung được sản phẩm ngoài đời sẽ như thế nào.`,
+    authorName: "Lê Hoàng Nam",
     authorImg: "/images/users/user-03.jpg",
-    authorRole: "Serial Entrepreneur",
+    authorRole: "Người tiêu dùng cá nhân",
   },
   {
-    review: `Lorem ipsum dolor sit amet, adipiscing elit. Donec
-    malesuada justo vitaeaugue suscipit beautiful vehicula`,
-    authorName: "Thomas Frank",
+    review: `Mỗi lần mua đồ công nghệ hay đồ gia dụng mình đều vào QReview xem trước. Có nhiều đánh giá từ người đã dùng rồi nên tránh được việc mua nhầm.`,
+    authorName: "Phạm Quốc Anh",
     authorImg: "/images/users/user-01.jpg",
-    authorRole: "Entrepreneur",
+    authorRole: "Freelancer",
   },
   {
-    review: `Lorem ipsum dolor sit amet, adipiscing elit. Donec
-    malesuada justo vitaeaugue suscipit beautiful vehicula`,
-    authorName: "Dave Smith",
+    review: `QReview giúp mình tiết kiệm khá nhiều thời gian vì không phải tìm review ở nhiều nơi. Thông tin gọn, dễ đọc và sát với trải nghiệm thực tế.`,
+    authorName: "Võ Thanh Huyền",
     authorImg: "/images/users/user-02.jpg",
-    authorRole: "Serial Entrepreneur",
+    authorRole: "Chủ doanh nghiệp nhỏ",
   },
   {
-    review: `Lorem ipsum dolor sit amet, adipiscing elit. Donec
-    malesuada justo vitaeaugue suscipit beautiful vehicula`,
-    authorName: "Davis Dorwart",
+    review: `Mình từng tránh được vài sản phẩm không như quảng cáo nhờ đọc review trên QReview. Nội dung khá chân thật, không bị quá màu mè.`,
+    authorName: "Đặng Minh Khoa",
     authorImg: "/images/users/user-03.jpg",
-    authorRole: "Serial Entrepreneur",
+    authorRole: "Người mua hàng thường xuyên",
   },
 ];
+
 
 export default testimonialsData;

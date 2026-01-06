@@ -61,15 +61,15 @@ const ShopDetails = () => {
   const tabs = [
     {
       id: "tabOne",
-      title: "Description",
+      title: "Mô tả",
     },
     {
       id: "tabTwo",
-      title: "Additional Information",
+      title: "Thông tin bổ sung",
     },
     {
       id: "tabThree",
-      title: "Reviews",
+      title: "Đánh giá",
     },
   ];
 

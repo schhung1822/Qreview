@@ -37,7 +37,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" suppressHydrationWarning className={manrope.variable}>
-      <body className="font-sans">
+      <body className={`font-sans bg-background text-foreground ${manrope.variable}`}>
         {loading ? (
           <PreLoader />
         ) : (

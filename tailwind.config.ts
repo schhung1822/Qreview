@@ -29,6 +29,18 @@ const config: Config = {
       current: "currentColor",
       transparent: "transparent",
       white: "#FFFFFF",
+
+      // Semantic tokens for dark mode
+      background: "hsl(var(--background))",
+      foreground: "hsl(var(--foreground))",
+      surface: "hsl(var(--surface))",
+      "surface-hover": "hsl(var(--surface-hover))",
+      border: "hsl(var(--border))",
+      "border-hover": "hsl(var(--border-hover))",
+      "text-primary": "hsl(var(--text-primary))",
+      "text-secondary": "hsl(var(--text-secondary))",
+      "text-muted": "hsl(var(--text-muted))",
+
       body: "#6C6F93",
       meta: {
         DEFAULT: "#F7F9FC",
