@@ -18,7 +18,7 @@ const BlogGrid = () => {
 
           {/* <!-- Blog Pagination Start --> */}
           <div className="flex justify-center mt-15">
-            <div className="bg-white shadow-1 rounded-md p-2">
+            <div className="bg-background dark:bg-surface shadow-1 rounded-md p-2">
               <ul className="flex items-center">
                 <li>
                   <button

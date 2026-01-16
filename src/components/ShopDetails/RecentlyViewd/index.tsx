@@ -30,7 +30,7 @@ const RecentlyViewdItems = () => {
           {/* <!-- section title --> */}
           <div className="mb-10 flex items-center justify-between">
             <div>
-              <span className="flex items-center gap-2.5 font-medium text-dark mb-1.5">
+              <span className="flex items-center gap-2.5 font-medium text-dark dark:text-foreground mb-1.5">
                 <Image
                   src="/images/icons/icon-05.svg"
                   width={17}
@@ -39,7 +39,7 @@ const RecentlyViewdItems = () => {
                 />
                 Danh mục
               </span>
-              <h2 className="font-semibold text-xl xl:text-heading-5 text-dark">
+              <h2 className="font-semibold text-xl xl:text-heading-5 text-dark dark:text-foreground">
                 Sản phẩm bạn có thể thích
               </h2>
             </div>

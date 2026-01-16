@@ -27,13 +27,13 @@ const PreviewSliderModal = () => {
 
   return (
     <div
-      className={`preview-slider w-full h-screen  z-999999 inset-0 flex justify-center items-center bg-[#000000F2] bg-opacity-70 ${isModalPreviewOpen ? "fixed" : "hidden"
+      className={`preview-slider w-full h-screen  z-999999 inset-0 flex justify-center items-center bg-dark dark:bg-dark bg-opacity-70 ${isModalPreviewOpen ? "fixed" : "hidden"
         }`}
     >
       <button
         onClick={() => closePreviewModal()}
         aria-label="button for close modal"
-        className="absolute top-0 right-0 sm:top-6 sm:right-6 flex items-center justify-center w-10 h-10 rounded-full ease-in duration-150 text-white hover:text-meta-5 z-10"
+        className="absolute top-0 right-0 sm:top-6 sm:right-6 flex items-center justify-center w-10 h-10 rounded-full ease-in duration-150 text-white hover:text-blue z-10"
       >
         <svg
           className="fill-current"

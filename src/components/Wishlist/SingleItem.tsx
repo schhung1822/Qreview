@@ -29,7 +29,7 @@ const SingleItem = ({ item }) => {
         <button
           onClick={() => handleRemoveFromWishlist()}
           aria-label="button for remove product from wishlist"
-          className="flex items-center justify-center rounded-lg max-w-[38px] w-full h-9.5 bg-gray-2 border border-gray-3 ease-out duration-200 hover:bg-red-light-6 hover:border-red-light-4 hover:text-red"
+          className="flex items-center justify-center rounded-lg max-w-[38px] w-full h-9.5 bg-background dark:bg-surface border border-gray-3 dark:border-dark-3 ease-out duration-200 hover:bg-red-light-6 dark:hover:bg-red/20 hover:border-red-light-4 dark:hover:border-red hover:text-red"
         >
           <svg
             className="fill-current"
@@ -56,12 +56,12 @@ const SingleItem = ({ item }) => {
       <div className="min-w-[387px]">
         <div className="flex items-center justify-between gap-5">
           <div className="w-full flex items-center gap-5.5">
-            <div className="flex items-center justify-center rounded-[5px] bg-gray-2 max-w-[80px] w-full h-17.5">
+            <div className="flex items-center justify-center rounded-[5px] bg-background dark:bg-surface max-w-[80px] w-full h-17.5">
               <Image src={item.imgs?.thumbnails[0]} alt="product" width={200} height={200} />
             </div>
 
             <div>
-              <h3 className="text-dark ease-out duration-200 hover:text-blue">
+              <h3 className="text-dark dark:text-foreground ease-out duration-200 hover:text-blue">
                 <a href="#"> {item.title} </a>
               </h3>
             </div>
@@ -70,7 +70,7 @@ const SingleItem = ({ item }) => {
       </div>
 
       <div className="min-w-[205px]">
-        <p className="text-dark">${item.discountedPrice}</p>
+        <p className="text-dark dark:text-foreground">${item.discountedPrice}</p>
       </div>
 
       <div className="min-w-[265px]">
@@ -105,7 +105,7 @@ const SingleItem = ({ item }) => {
       <div className="min-w-[150px] flex justify-end">
         <button
           onClick={() => handleAddToCart()}
-          className="inline-flex text-dark hover:text-white bg-gray-1 border border-gray-3 py-2.5 px-6 rounded-md ease-out duration-200 hover:bg-blue hover:border-gray-3"
+          className="inline-flex text-foreground dark:text-text-primary hover:text-white bg-background dark:bg-surface border border-gray-3 dark:border-dark-3 py-2.5 px-6 rounded-md ease-out duration-200 hover:bg-blue hover:border-gray-3"
         >
           Add to Cart
         </button>

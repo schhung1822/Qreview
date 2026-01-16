@@ -1,9 +1,17 @@
 export function updateThemeMode(value: "light" | "dark") {
   const doc = document.documentElement;
+  
+  // Thêm class để vô hiệu hóa transitions
   doc.classList.add("disable-transitions");
+  
+  // Cập nhật theme
   doc.classList.toggle("dark", value === "dark");
+  
+  // Sử dụng requestAnimationFrame để đảm bảo transitions được tính toán lại
   requestAnimationFrame(() => {
-    doc.classList.remove("disable-transitions");
+    requestAnimationFrame(() => {
+      doc.classList.remove("disable-transitions");
+    });
   });
 }
 

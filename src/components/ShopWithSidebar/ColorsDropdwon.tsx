@@ -8,17 +8,17 @@ const ColorsDropdwon = () => {
   const colors = ["red", "blue", "orange", "pink", "purple"];
 
   return (
-    <div className="bg-white shadow-1 rounded-lg">
+    <div className="bg-background dark:bg-surface shadow-1 rounded-lg">
       <div
         onClick={() => setToggleDropdown(!toggleDropdown)}
         className={`cursor-pointer flex items-center justify-between py-3 pl-6 pr-5.5 ${
           toggleDropdown && "shadow-filter"
         }`}
       >
-        <p className="text-dark">Màu sắc</p>
+        <p className="text-dark dark:text-foreground">Màu sắc</p>
         <button
           aria-label="button for colors dropdown"
-          className={`text-dark ease-out duration-200 ${
+          className={`text-dark dark:text-foreground ease-out duration-200 ${
             toggleDropdown && "rotate-180"
           }`}
         >

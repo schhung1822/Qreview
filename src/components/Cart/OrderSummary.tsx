@@ -10,7 +10,7 @@ const OrderSummary = () => {
   return (
     <div className="lg:max-w-[455px] w-full">
       {/* <!-- order list box --> */}
-      <div className="bg-white shadow-1 rounded-[10px]">
+      <div className="bg-background dark:bg-surface shadow-1 rounded-[10px]">
         <div className="border-b border-gray-3 py-5 px-4 sm:px-8.5">
           <h3 className="font-medium text-xl text-dark">Order Summary</h3>
         </div>

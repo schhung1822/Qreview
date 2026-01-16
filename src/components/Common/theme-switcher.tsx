@@ -1,16 +1,13 @@
 "use client";
 
 import * as React from "react";
+import { updateThemeMode } from "@/lib/theme-utils";
 
 type Theme = "light" | "dark";
 
 function getSystemTheme(): Theme {
   if (typeof window === "undefined") return "light";
   return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-}
-
-function applyTheme(theme: Theme) {
-  document.documentElement.classList.toggle("dark", theme === "dark");
 }
 
 export default function ThemeSwitcher({
@@ -26,7 +23,7 @@ export default function ThemeSwitcher({
     const initial = saved ?? getSystemTheme();
 
     setTheme(initial);
-    applyTheme(initial);
+    updateThemeMode(initial);
     setMounted(true);
   }, []);
 
@@ -34,7 +31,7 @@ export default function ThemeSwitcher({
     const next: Theme = theme === "dark" ? "light" : "dark";
     setTheme(next);
     localStorage.setItem("theme", next);
-    applyTheme(next);
+    updateThemeMode(next);
   };
 
   return (
@@ -45,7 +42,7 @@ export default function ThemeSwitcher({
       className={[
         "inline-flex items-center justify-center",
         "w-10 h-10 rounded-full",
-        "border border-gray-3 bg-gray-1 hover:bg-gray-2",
+        "border border-gray-3 bg-background dark:bg-surface hover:bg-gray-2 dark:hover:bg-surface-hover",
         "transition-colors duration-200",
         "dark:bg-dark dark:border-dark-3 dark:hover:bg-dark-2",
         className,

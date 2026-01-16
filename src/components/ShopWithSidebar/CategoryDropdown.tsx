@@ -14,7 +14,7 @@ const CategoryItem = ({ category }) => {
       <div className="flex items-center gap-2">
         <div
           className={`cursor-pointer flex items-center justify-center rounded w-4 h-4 border ${
-            selected ? "border-blue bg-blue" : "bg-white border-gray-3"
+            selected ? "border-blue bg-blue" : "bg-background dark:bg-surface border-gray-3 dark:border-dark-3"
           }`}
         >
           <svg
@@ -40,7 +40,7 @@ const CategoryItem = ({ category }) => {
 
       <span
         className={`${
-          selected ? "text-white bg-blue" : "bg-gray-2"
+          selected ? "text-white bg-blue" : "bg-background dark:bg-surface"
         } inline-flex rounded-[30px] text-custom-xs px-2 ease-out duration-200 group-hover:text-white group-hover:bg-blue`}
       >
         {category.products}
@@ -53,7 +53,7 @@ const CategoryDropdown = ({ categories }) => {
   const [toggleDropdown, setToggleDropdown] = useState(true);
 
   return (
-    <div className="bg-white shadow-1 rounded-lg">
+    <div className="bg-background dark:bg-surface shadow-1 rounded-lg">
       <div
         onClick={(e) => {
           e.preventDefault();
@@ -63,10 +63,10 @@ const CategoryDropdown = ({ categories }) => {
           toggleDropdown && "shadow-filter"
         }`}
       >
-        <p className="text-dark">Danh mục</p>
+        <p className="text-dark dark:text-foreground">Danh mục</p>
         <button
           aria-label="button for category dropdown"
-          className={`text-dark ease-out duration-200 ${
+          className={`text-dark dark:text-foreground ease-out duration-200 ${
             toggleDropdown && "rotate-180"
           }`}
         >

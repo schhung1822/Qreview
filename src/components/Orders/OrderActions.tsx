@@ -5,7 +5,7 @@ const OrderActions = ({ toggleEdit, toggleDetails }: any) => {
     <>
       <button
         onClick={toggleDetails}
-        className="hover:bg-gray-2 rounded-sm p-2"
+        className="hover:bg-background dark:hover:bg-surface rounded-sm p-2"
       >
         <svg
           width="18"

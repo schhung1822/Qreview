@@ -29,13 +29,13 @@ const CounDown = () => {
   return (
     <section className="overflow-hidden py-20">
       <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
-        <div className="relative overflow-hidden z-1 rounded-lg bg-[#D0E9F3] p-4 sm:p-7.5 lg:p-10 xl:p-15">
+        <div className="relative overflow-hidden z-1 rounded-lg bg-background dark:bg-surface p-4 sm:p-7.5 lg:p-10 xl:p-15">
           <div className="max-w-[422px] w-full">
             <span className="block font-medium text-custom-1 text-blue mb-2.5">
               Đừng quên!!
             </span>
 
-            <h2 className="font-bold text-dark text-xl lg:text-heading-4 xl:text-heading-3 mb-3">
+            <h2 className="font-bold text-dark dark:text-foreground text-xl lg:text-heading-4 xl:text-heading-3 mb-3">
               Nâng cao trải nghiệm âm thanh của bạn
             </h2>
 
@@ -50,11 +50,11 @@ const CounDown = () => {
               {/* <!-- timer hours --> */}
               <div>
                 <span
-                  className="min-w-[64px] h-14.5 font-semibold text-xl lg:text-3xl text-dark rounded-lg flex items-center justify-center bg-white shadow-2 px-4 mb-2"
+                  className="min-w-[64px] h-14.5 font-semibold text-xl lg:text-3xl text-dark rounded-lg flex items-center justify-center bg-background dark:bg-surface shadow-2 px-4 mb-2"
                   x-text="hours"
                 >
-                  {" "}
-                  {hours < 10 ? "0" + hours : hours}{" "}
+                  {
+                  hours < 10 ? "0" + hours : hours}{" "}
                 </span>
                 <span className="block text-custom-sm text-dark text-center">
                   Giờ
@@ -64,7 +64,7 @@ const CounDown = () => {
               {/* <!-- timer minutes --> */}
               <div>
                 <span
-                  className="min-w-[64px] h-14.5 font-semibold text-xl lg:text-3xl text-dark rounded-lg flex items-center justify-center bg-white shadow-2 px-4 mb-2"
+                  className="min-w-[64px] h-14.5 font-semibold text-xl lg:text-3xl text-dark rounded-lg flex items-center justify-center bg-background dark:bg-surface shadow-2 px-4 mb-2"
                   x-text="minutes"
                 >
                   {minutes < 10 ? "0" + minutes : minutes}{" "}
@@ -77,7 +77,7 @@ const CounDown = () => {
               {/* <!-- timer seconds --> */}
               <div>
                 <span
-                  className="min-w-[64px] h-14.5 font-semibold text-xl lg:text-3xl text-dark rounded-lg flex items-center justify-center bg-white shadow-2 px-4 mb-2"
+                  className="min-w-[64px] h-14.5 font-semibold text-xl lg:text-3xl text-dark rounded-lg flex items-center justify-center bg-background dark:bg-surface shadow-2 px-4 mb-2"
                   x-text="seconds"
                 >
                   {seconds < 10 ? "0" + seconds : seconds}{" "}

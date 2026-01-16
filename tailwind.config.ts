@@ -50,11 +50,11 @@ const config: Config = {
         5: "#BBBEC9",
       },
       dark: {
-        DEFAULT: "#1C274C",
-        2: "#495270",
-        3: "#606882",
-        4: "#8D93A5",
-        5: "#BBBEC9",
+        DEFAULT: "#1a1f2e",
+        2: "#252d3d",
+        3: "#2f3848",
+        4: "#3d4557",
+        5: "#4d5566",
       },
       gray: {
         DEFAULT: "#F3F5F6",

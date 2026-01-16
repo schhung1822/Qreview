@@ -53,7 +53,7 @@ const BlogGridWithSidebar = () => {
 
               {/* <!-- Blog Pagination Start --> */}
               <div className="flex justify-center mt-15">
-                <div className="bg-white shadow-1 rounded-md p-2">
+                <div className="bg-background dark:bg-surface shadow-1 rounded-md p-2">
                   <ul className="flex items-center">
                     <li>
                       <button
@@ -185,7 +185,7 @@ const BlogGridWithSidebar = () => {
               <Categories categories={categories} />
 
               {/* <!-- Tags box --> */}
-              <div className="shadow-1 bg-white rounded-xl mt-7.5">
+              <div className="shadow-1 bg-background dark:bg-surface rounded-xl mt-7.5">
                 <div className="px-4 sm:px-6 py-4.5 border-b border-gray-3">
                   <h2 className="font-medium text-lg text-dark">Tags</h2>
                 </div>

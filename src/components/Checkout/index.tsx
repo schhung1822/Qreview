@@ -28,7 +28,7 @@ const Checkout = () => {
                 <Shipping />
 
                 {/* <!-- others note box --> */}
-                <div className="bg-white shadow-1 rounded-[10px] p-4 sm:p-8.5 mt-7.5">
+                <div className="bg-background dark:bg-surface shadow-1 rounded-[10px] p-4 sm:p-8.5 mt-7.5">
                   <div>
                     <label htmlFor="notes" className="block mb-2.5">
                       Other Notes (optional)
@@ -39,7 +39,7 @@ const Checkout = () => {
                       id="notes"
                       rows={5}
                       placeholder="Notes about your order, e.g. speacial notes for delivery."
-                      className="rounded-md border border-gray-3 bg-gray-1 placeholder:text-dark-5 w-full p-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
+                      className="rounded-md border border-gray-3 bg-background dark:bg-surface placeholder:text-dark-5 dark:placeholder:text-text-muted w-full p-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
                     ></textarea>
                   </div>
                 </div>
@@ -48,7 +48,7 @@ const Checkout = () => {
               {/* // <!-- checkout right --> */}
               <div className="max-w-[455px] w-full">
                 {/* <!-- order list box --> */}
-                <div className="bg-white shadow-1 rounded-[10px]">
+                <div className="bg-background dark:bg-surface shadow-1 rounded-[10px]">
                   <div className="border-b border-gray-3 py-5 px-4 sm:px-8.5">
                     <h3 className="font-medium text-xl text-dark">
                       Your Order

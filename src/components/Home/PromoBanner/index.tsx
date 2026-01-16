@@ -6,13 +6,13 @@ const PromoBanner = () => {
     <section className="overflow-hidden py-20">
       <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
         {/* <!-- promo banner big --> */}
-        <div className="relative z-1 overflow-hidden rounded-lg bg-[#F5F5F7] py-12.5 lg:py-17.5 xl:py-22.5 px-4 sm:px-7.5 lg:px-14 xl:px-19 mb-7.5">
+        <div className="relative z-1 overflow-hidden rounded-lg bg-background dark:bg-surface py-12.5 lg:py-17.5 xl:py-22.5 px-4 sm:px-7.5 lg:px-14 xl:px-19 mb-7.5">
           <div className="max-w-[550px] w-full">
-            <span className="block font-medium text-xl text-dark mb-3">
+            <span className="block font-medium text-xl text-dark dark:text-foreground mb-3">
               Apple iPhone 14 Plus
             </span>
 
-            <h2 className="font-bold text-xl lg:text-heading-4 xl:text-heading-3 text-dark mb-5">
+            <h2 className="font-bold text-xl lg:text-heading-4 xl:text-heading-3 text-dark dark:text-foreground mb-5">
               GIẢM GIÁ ĐẾN 30%
             </h2>
 
@@ -39,7 +39,7 @@ const PromoBanner = () => {
 
         <div className="grid gap-7.5 grid-cols-1 lg:grid-cols-2">
           {/* <!-- promo banner small --> */}
-          <div className="relative z-1 overflow-hidden rounded-lg bg-[#DBF4F3] py-10 xl:py-16 px-4 sm:px-7.5 xl:px-10">
+          <div className="relative z-1 overflow-hidden rounded-lg bg-background dark:bg-surface py-10 xl:py-16 px-4 sm:px-7.5 xl:px-10">
             <Image
               src="/images/promo/promo-02.png"
               alt="promo img"
@@ -71,7 +71,7 @@ const PromoBanner = () => {
           </div>
 
           {/* <!-- promo banner small --> */}
-          <div className="relative z-1 overflow-hidden rounded-lg bg-[#FFECE1] py-10 xl:py-16 px-4 sm:px-7.5 xl:px-10">
+          <div className="relative z-1 overflow-hidden rounded-lg bg-background dark:bg-surface py-10 xl:py-16 px-4 sm:px-7.5 xl:px-10">
             <Image
               src="/images/promo/promo-03.png"
               alt="promo img"

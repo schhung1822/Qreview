@@ -86,7 +86,7 @@ const BlogDetailsWithSidebar = () => {
                   </ul>
                 </div>
 
-                <div className="rounded-xl bg-white pt-7.5 pb-6 px-4 sm:px-7.5 my-7.5">
+                <div className="rounded-xl bg-background dark:bg-surface pt-7.5 pb-6 px-4 sm:px-7.5 my-7.5">
                   <p className="italic text-dark text-center">
                     ‘‘Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                     sed do eiusmod incididunt utionals labore et dolore magna
@@ -150,7 +150,7 @@ const BlogDetailsWithSidebar = () => {
                     <ul className="flex flex-wrap items-center gap-3.5">
                       <li>
                         <a
-                          className="inline-flex hover:text-white border border-gray-3 bg-white py-2 px-4 rounded-md ease-out duration-200 hover:bg-blue hover:border-blue"
+                          className="inline-flex hover:text-white border border-gray-3 bg-background dark:bg-surface py-2 px-4 rounded-md ease-out duration-200 hover:bg-blue hover:border-blue"
                           href="#"
                         >
                           Desktop
@@ -159,7 +159,7 @@ const BlogDetailsWithSidebar = () => {
 
                       <li>
                         <a
-                          className="inline-flex hover:text-white border border-gray-3 bg-white py-2 px-4 rounded-md ease-out duration-200 hover:bg-blue hover:border-blue"
+                          className="inline-flex hover:text-white border border-gray-3 bg-background dark:bg-surface py-2 px-4 rounded-md ease-out duration-200 hover:bg-blue hover:border-blue"
                           href="#"
                         >
                           Macbook
@@ -168,7 +168,7 @@ const BlogDetailsWithSidebar = () => {
 
                       <li>
                         <a
-                          className="inline-flex hover:text-white border border-gray-3 bg-white py-2 px-4 rounded-md ease-out duration-200 hover:bg-blue hover:border-blue"
+                          className="inline-flex hover:text-white border border-gray-3 bg-background dark:bg-surface py-2 px-4 rounded-md ease-out duration-200 hover:bg-blue hover:border-blue"
                           href="#"
                         >
                           PC

@@ -23,7 +23,6 @@ const Header = () => {
 
   const { openCartModal } = useCartModalContext();
   const product = useAppSelector((state) => state.cartReducer.items);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const totalPrice = useSelector(selectTotalPrice);
 
   const handleOpenCartModal = () => openCartModal();

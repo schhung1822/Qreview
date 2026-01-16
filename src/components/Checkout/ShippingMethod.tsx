@@ -4,7 +4,7 @@ import Image from "next/image";
 const ShippingMethod = () => {
   const [shippingMethod, setShippingMethod] = useState("free");
   return (
-    <div className="bg-white shadow-1 rounded-[10px] mt-7.5">
+    <div className="bg-background dark:bg-surface shadow-1 rounded-[10px] mt-7.5">
       <div className="border-b border-gray-3 py-5 px-4 sm:px-8.5">
         <h3 className="font-medium text-xl text-dark">Shipping Method</h3>
       </div>
@@ -56,7 +56,7 @@ const ShippingMethod = () => {
               ></div>
             </div>
 
-            <div className="rounded-md border-[0.5px] py-3.5 px-5 ease-out duration-200 hover:bg-gray-2 hover:border-transparent hover:shadow-none">
+            <div className="rounded-md border-[0.5px] py-3.5 px-5 ease-out duration-200 hover:bg-background dark:hover:bg-surface hover:border-transparent hover:shadow-none">
               <div className="flex items-center">
                 <div className="pr-4">
                   <Image
@@ -96,7 +96,7 @@ const ShippingMethod = () => {
               ></div>
             </div>
 
-            <div className="rounded-md border-[0.5px] py-3.5 px-5 ease-out duration-200 hover:bg-gray-2 hover:border-transparent hover:shadow-none">
+            <div className="rounded-md border-[0.5px] py-3.5 px-5 ease-out duration-200 hover:bg-background dark:hover:bg-surface hover:border-transparent hover:shadow-none">
               <div className="flex items-center">
                 <div className="pr-4">
                   <Image
