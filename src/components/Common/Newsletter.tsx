@@ -4,9 +4,12 @@ import Image from "next/image";
 
 const Newsletter = () => {
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (isSubmitting) return;
 
     const form = e.currentTarget;
     const formData = new FormData(form);
@@ -16,6 +19,7 @@ const Newsletter = () => {
 
     const tracking = (window as any).__TRACKING__ || {};
 
+    setIsSubmitting(true);
     try {
       const response = await fetch("/api/newsletter", {
         method: "POST",
@@ -41,10 +45,12 @@ const Newsletter = () => {
         // Tự động ẩn popup sau 3 giây
         setTimeout(() => {
           setShowSuccessPopup(false);
-        }, 30000);
+        }, 3000);
       }
     } catch (error) {
       console.error("Error submitting newsletter:", error);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -85,9 +91,17 @@ const Newsletter = () => {
                   />
                   <button
                     type="submit"
-                    className="inline-flex justify-center py-3 px-4 text-white bg-blue font-medium rounded-md ease-out duration-200 hover:bg-blue-dark whitespace-nowrap"
+                    className="inline-flex items-center gap-2 justify-center py-3 px-4 text-white bg-blue font-medium rounded-md ease-out duration-200 hover:bg-blue-dark whitespace-nowrap disabled:opacity-60 disabled:cursor-not-allowed"
+                    disabled={isSubmitting}
+                    aria-busy={isSubmitting}
                   >
-                    Đăng ký
+                    {isSubmitting && (
+                      <span
+                        className="h-4 w-4 border-2 border-white/60 border-t-transparent rounded-full animate-spin"
+                        aria-hidden
+                      />
+                    )}
+                    <span>{isSubmitting ? "Đang gửi..." : "Đăng ký"}</span>
                   </button>
                 </div>
               </form>
@@ -99,11 +113,11 @@ const Newsletter = () => {
       {/* Success Popup */}
       {showSuccessPopup && (
         <div 
-          className="fixed inset-0 z-99999 flex items-center justify-center bg-dark/50"
+          className="fixed inset-0 z-99999 flex items-center justify-center bg-dark/50 backdrop-fade"
           onClick={() => setShowSuccessPopup(false)}
         >
           <div 
-            className="bg-background dark:bg-surface rounded-lg shadow-2 p-8 max-w-md mx-4 animate-fade-in"
+            className="bg-background dark:bg-surface rounded-lg shadow-2 p-8 max-w-md mx-4 popup-zoom"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex flex-col items-center text-center">

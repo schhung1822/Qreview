@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const BlogItem = ({ blog }: { blog: BlogItem }) => {
   return (
-    <div className="shadow-1 bg- dark:bg-surface rounded-xl px-4 sm:px-5 pt-5 pb-4">
+    <div className="shadow-1 bg-surface dark:bg-surface rounded-xl px-4 sm:px-5 pt-5 pb-4">
       <Link href="/blogs/blog-details-with-sidebar" className="rounded-md overflow-hidden">
         <Image
           src={blog.img}

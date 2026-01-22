@@ -2,7 +2,7 @@ import React from "react";
 
 const Categories = ({ categories }) => {
   return (
-    <div className="shadow-1 bg-white dark:bg-surface rounded-xl mt-7.5">
+    <div className="shadow-1 bg-surface dark:bg-surface rounded-xl mt-7.5">
       <div className="px-4 sm:px-6 py-4.5 border-b border-gray-3">
         <h2 className="font-medium text-lg text-foreground">Danh mục phổ biến</h2>
       </div>

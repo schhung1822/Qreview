@@ -7,8 +7,8 @@
 ### 🎨 Màu Sắc Mới cho Dark Mode
 
 #### Nền (Backgrounds)
-- **Nền chính**: `#1a1f2e` - Xám tối chuyên nghiệp
-- **Surface 1**: `#252d3d` - Cho các thành phần nổi bật
+- **Nền chính**: `#1d2025` - Xám tối chuyên nghiệp
+- **Surface 1**: `#171717` - Cho các thành phần nổi bật
 - **Surface 2 (Hover)**: `#2f3848` - Trạng thái hover
 
 #### Đường Viền (Borders)
@@ -52,7 +52,7 @@
 
 2. **[tailwind.config.ts](tailwind.config.ts)**
    - Cập nhật dark color palette
-   - Từ `#1C274C` → `#1a1f2e` (xám tối hơn)
+   - Từ `#1C274C` → `#1d2025` (xám tối hơn)
 
 3. **[theme-utils.ts](src/lib/theme-utils.ts)**
    - Cập nhật `updateThemeMode()` function

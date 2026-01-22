@@ -53,7 +53,7 @@ const CategoryDropdown = ({ categories }) => {
   const [toggleDropdown, setToggleDropdown] = useState(true);
 
   return (
-    <div className="bg-background dark:bg-surface shadow-1 rounded-lg">
+    <div className="bg-surface dark:bg-surface shadow-1 rounded-lg">
       <div
         onClick={(e) => {
           e.preventDefault();
@@ -63,7 +63,7 @@ const CategoryDropdown = ({ categories }) => {
           toggleDropdown && "shadow-filter"
         }`}
       >
-        <p className="text-dark dark:text-foreground">Danh mục</p>
+        <p className="text-foreground">Danh mục</p>
         <button
           aria-label="button for category dropdown"
           className={`text-dark dark:text-foreground ease-out duration-200 ${

@@ -35,7 +35,7 @@ const CounDown = () => {
               Đừng quên!!
             </span>
 
-            <h2 className="font-bold text-dark dark:text-foreground text-xl lg:text-heading-4 xl:text-heading-3 mb-3">
+            <h2 className="font-bold text-foreground text-xl lg:text-heading-4 xl:text-heading-3 mb-3">
               Nâng cao trải nghiệm âm thanh của bạn
             </h2>
 

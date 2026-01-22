@@ -7,21 +7,26 @@ const PriceDropdown = () => {
 
   const [selectedPrice, setSelectedPrice] = useState({
     from: 0,
-    to: 100,
+    to: 50000000,
   });
 
+  // Hàm format số với dấu chấm ngăn cách hàng nghìn
+  const formatPrice = (price: number) => {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  };
+
   return (
-    <div className="bg-background dark:bg-surface shadow-1 rounded-lg">
+    <div className="bg-surface dark:bg-surface shadow-1 rounded-lg">
       <div
         onClick={() => setToggleDropdown(!toggleDropdown)}
         className="cursor-pointer flex items-center justify-between py-3 pl-6 pr-5.5"
       >
-        <p className="text-dark dark:text-foreground">Giá</p>
+        <p className="text-foreground">Giá</p>
         <button
           onClick={() => setToggleDropdown(!toggleDropdown)}
           id="price-dropdown-btn"
           aria-label="button for price dropdown"
-          className={`text-dark dark:text-foreground ease-out duration-200 ${
+          className={`text-foreground ease-out duration-200 ${
             toggleDropdown && 'rotate-180'
           }`}
         >
@@ -64,8 +69,8 @@ const PriceDropdown = () => {
                 <span className="block border-r border-gray-3/80 px-2.5 py-1.5">
                   VNĐ
                 </span>
-                <span id="minAmount" className="block px-3 py-1.5">
-                  {selectedPrice.from}
+                <span id="minAmount" className="block px-3 py-1.5 text-foreground">
+                  {formatPrice(selectedPrice.from)}
                 </span>
               </div>
 
@@ -73,8 +78,8 @@ const PriceDropdown = () => {
                 <span className="block border-r border-gray-3/80 px-2.5 py-1.5">
                   VNĐ
                 </span>
-                <span id="maxAmount" className="block px-3 py-1.5">
-                  {selectedPrice.to}
+                <span id="maxAmount" className="block px-3 py-1.5 text-foreground">
+                  {formatPrice(selectedPrice.to)}
                 </span>
               </div>
             </div>

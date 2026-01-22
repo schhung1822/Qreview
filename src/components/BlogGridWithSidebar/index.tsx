@@ -40,7 +40,7 @@ const BlogGridWithSidebar = () => {
     <>
       <Breadcrumb title={"Tin tức"} pages={["tin tức"]} />
 
-      <section className="overflow-hidden py-16 border-t border-gray-3 dark:border-dark-3">
+      <section className="overflow-hidden py-16 border-t dark:border-dark-3">
         <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
           <div className="flex flex-col lg:flex-row gap-7.5">
             {/* <!-- blog grid --> */}
@@ -53,7 +53,7 @@ const BlogGridWithSidebar = () => {
 
               {/* <!-- Blog Pagination Start --> */}
               <div className="flex justify-center mt-15">
-                <div className="bg-background dark:bg-surface shadow-1 rounded-md p-2">
+                <div className="bg-surface dark:bg-surface shadow-1 rounded-md p-2">
                   <ul className="flex items-center">
                     <li>
                       <button
@@ -185,7 +185,7 @@ const BlogGridWithSidebar = () => {
               <Categories categories={categories} />
 
               {/* <!-- Tags box --> */}
-              <div className="shadow-1 bg-background dark:bg-surface rounded-xl mt-7.5">
+              <div className="shadow-1 bg-surface dark:bg-surface rounded-xl mt-7.5">
                 <div className="px-4 sm:px-6 py-4.5 border-b border-gray-3">
                   <h2 className="font-medium text-lg text-foreground">Thẻ</h2>
                 </div>

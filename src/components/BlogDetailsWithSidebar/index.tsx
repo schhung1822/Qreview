@@ -14,7 +14,7 @@ const BlogDetailsWithSidebar = () => {
         title={"Blog Details With Sidebar"}
         pages={["blog details sidebar"]}
       />
-      <section className="overflow-hidden py-16">
+      <section className="overflow-hidden py-16 border-t">
         <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
           <div className="flex flex-col lg:flex-row gap-7.5 xl:gap-12.5">
             {/* <!-- blog details --> */}
@@ -275,7 +275,7 @@ const BlogDetailsWithSidebar = () => {
               <LatestProducts products={shopData} />
 
               {/* <!-- Popular Category box --> */}
-              <div className="shadow-1 bg-white dark:bg-surface rounded-xl mt-7.5">
+              <div className="shadow-1 bg-surface dark:bg-surface rounded-xl mt-7.5">
                 <div className="px-4 sm:px-6 py-4.5 border-b border-gray-3">
                   <h2 className="font-medium text-lg text-foreground">
                     Popular Category
@@ -344,7 +344,7 @@ const BlogDetailsWithSidebar = () => {
               </div>
 
               {/* <!-- Tags box --> */}
-              <div className="shadow-1 bg-white dark:bg-surface rounded-xl mt-7.5">
+              <div className="shadow-1 bg-surface dark:bg-surface rounded-xl mt-7.5">
                 <div className="px-4 sm:px-6 py-4.5 border-b border-gray-3">
                   <h2 className="font-medium text-lg text-foreground">Tags</h2>
                 </div>

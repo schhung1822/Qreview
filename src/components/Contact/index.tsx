@@ -4,9 +4,12 @@ import Breadcrumb from "../Common/Breadcrumb";
 
 const Contact = () => {
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (isSubmitting) return;
 
     const form = e.currentTarget;
     const formData = new FormData(form);
@@ -27,6 +30,7 @@ const Contact = () => {
 
     const tracking = (window as any).__TRACKING__ || {};
 
+    setIsSubmitting(true);
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -53,10 +57,12 @@ const Contact = () => {
         // Tự động ẩn popup sau 3 giây
         setTimeout(() => {
           setShowSuccessPopup(false);
-        }, 30000);
+        }, 3000);
       }
     } catch (error) {
       console.error("Error submitting contact form:", error);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -69,7 +75,7 @@ const Contact = () => {
           <div className="flex flex-col xl:flex-row gap-7.5">
             <div className="xl:max-w-[370px] w-full bg-background dark:bg-surface bg-surface rounded-xl shadow-1">
               <div className="py-5 px-4 sm:px-7.5 border-b border-gray-3">
-                <p className="font-medium text-xl text-dark dark:text-foreground">
+                <p className="font-medium text-xl text-foreground dark:text-foreground">
                   Thông tin liên hệ
                 </p>
               </div>
@@ -173,7 +179,7 @@ const Contact = () => {
                       id="email"
                       placeholder="Nhập email của bạn"
                       required
-                      className="rounded-md border border-gray-3 bg-gray-1 placeholder:text-dark-5 w-full py-2.5 px-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
+                      className="rounded-md border border-gray-3 dark:border-dark-3 bg-background dark:bg-surface placeholder:text-dark-5 dark:placeholder:text-text-muted text-dark dark:text-foreground w-full py-2.5 px-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
                     />
                   </div>
                 </div>
@@ -224,9 +230,17 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="inline-flex font-medium text-white bg-blue py-3 px-7 rounded-md ease-out duration-200 hover:bg-blue-dark"
+                  className="inline-flex items-center gap-2 font-medium text-white bg-blue py-3 px-7 rounded-md ease-out duration-200 hover:bg-blue-dark disabled:opacity-60 disabled:cursor-not-allowed"
+                  disabled={isSubmitting}
+                  aria-busy={isSubmitting}
                 >
-                  Gửi tin nhắn
+                  {isSubmitting && (
+                    <span
+                      className="h-4 w-4 border-2 border-white/60 border-t-transparent rounded-full animate-spin"
+                      aria-hidden
+                    />
+                  )}
+                  <span>{isSubmitting ? "Đang gửi..." : "Gửi tin nhắn"}</span>
                 </button>
               </form>
             </div>
@@ -235,11 +249,11 @@ const Contact = () => {
       {/* Success Popup */}
       {showSuccessPopup && (
         <div 
-          className="fixed inset-0 z-99999 flex items-center justify-center bg-dark/50"
+          className="fixed inset-0 z-99999 flex items-center justify-center bg-dark/50 backdrop-fade"
           onClick={() => setShowSuccessPopup(false)}
         >
           <div 
-            className="bg-background dark:bg-surface rounded-lg shadow-2 p-8 max-w-md mx-4 animate-fade-in"
+            className="bg-background dark:bg-surface rounded-lg shadow-2 p-8 max-w-md mx-4 popup-zoom"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex flex-col items-center text-center">
