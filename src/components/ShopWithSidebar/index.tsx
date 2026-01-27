@@ -7,14 +7,18 @@ import GenderDropdown from "./GenderDropdown";
 import SizeDropdown from "./SizeDropdown";
 import ColorsDropdwon from "./ColorsDropdwon";
 import PriceDropdown from "./PriceDropdown";
-import shopData from "../Shop/shopData";
 import SingleGridItem from "../Shop/SingleGridItem";
 import SingleListItem from "../Shop/SingleListItem";
+import { Product } from "@/types/product";
 
 const ShopWithSidebar = () => {
   const [productStyle, setProductStyle] = useState("grid");
   const [productSidebar, setProductSidebar] = useState(false);
   const [stickyMenu, setStickyMenu] = useState(false);
+  const [products, setProducts] = useState<Product[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const skeletonCount = productStyle === "grid" ? 9 : 5;
+  const skeletonItems = Array.from({ length: skeletonCount });
 
   const handleStickyMenu = () => {
     if (window.scrollY >= 80) {
@@ -79,6 +83,26 @@ const ShopWithSidebar = () => {
   ];
 
   useEffect(() => {
+    let isMounted = true;
+
+    fetch("/api/products")
+      .then((response) => response.json())
+      .then((data) => {
+        if (!isMounted) return;
+        setProducts(data?.products ?? []);
+        setIsLoading(false);
+      })
+      .catch(() => {
+        if (!isMounted) return;
+        setIsLoading(false);
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  useEffect(() => {
     window.addEventListener("scroll", handleStickyMenu);
 
     // closing sidebar while clicking outside
@@ -93,15 +117,17 @@ const ShopWithSidebar = () => {
     }
 
     return () => {
+      window.removeEventListener("scroll", handleStickyMenu);
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  });
+  }, [productSidebar]);
 
   return (
     <>
       <Breadcrumb
         title={"Explore All Products"}
         pages={["shop", "/", "shop with sidebar"]}
+        noShadow
       />
       <section className="overflow-hidden relative pb-20 pt-5 lg:pt-8 xl:pt-8 bg-background dark:bg-dark">
         <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
@@ -184,7 +210,14 @@ const ShopWithSidebar = () => {
                     <CustomSelect options={options} />
 
                     <p>
-                      Hiện <span className="text-foreground">9 của 50</span>{" "}
+                      Hiện{" "}
+                      <span className="text-foreground">
+                        {isLoading ? (
+                          <span className="inline-block h-4 w-16 rounded-full bg-gray-200 dark:bg-gray-700 animate-pulse align-middle" />
+                        ) : (
+                          <>{products.length} của 50</>
+                        )}
+                      </span>{" "}
                       Sản phẩm
                     </p>
                   </div>
@@ -278,12 +311,44 @@ const ShopWithSidebar = () => {
                     : "flex flex-col gap-7.5"
                 }`}
               >
-                {shopData.map((item, key) =>
-                  productStyle === "grid" ? (
-                    <SingleGridItem item={item} key={key} />
-                  ) : (
-                    <SingleListItem item={item} key={key} />
+                {isLoading ? (
+                  skeletonItems.map((_, key) =>
+                    productStyle === "grid" ? (
+                      <div
+                        key={`skeleton-grid-${key}`}
+                        className="rounded-lg bg-surface dark:bg-surface shadow-1 p-4 animate-pulse"
+                      >
+                        <div className="h-40 bg-gray-200 dark:bg-gray-700 rounded-md mb-4" />
+                        <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-3/4 mb-2" />
+                        <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-1/2 mb-4" />
+                        <div className="h-9 bg-gray-200 dark:bg-gray-700 rounded" />
+                      </div>
+                    ) : (
+                      <div
+                        key={`skeleton-list-${key}`}
+                        className="rounded-lg bg-surface dark:bg-surface shadow-1 p-4 animate-pulse flex flex-col sm:flex-row gap-4"
+                      >
+                        <div className="h-28 w-full sm:w-40 bg-gray-200 dark:bg-gray-700 rounded-md" />
+                        <div className="flex-1">
+                          <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-3/4 mb-2" />
+                          <div className="h-4 bg-gray-200 dark:bg-gray-700 rounded w-1/2 mb-4" />
+                          <div className="h-9 bg-gray-200 dark:bg-gray-700 rounded w-32" />
+                        </div>
+                      </div>
+                    )
                   )
+                ) : products.length ? (
+                  products.map((item, key) =>
+                    productStyle === "grid" ? (
+                      <SingleGridItem item={item} key={key} />
+                    ) : (
+                      <SingleListItem item={item} key={key} />
+                    )
+                  )
+                ) : (
+                  <div className="col-span-full text-center py-10">
+                    Không có sản phẩm để hiển thị.
+                  </div>
                 )}
               </div>
               {/* <!-- Products Grid Tab Content End --> */}

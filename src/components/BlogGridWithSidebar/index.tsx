@@ -38,9 +38,9 @@ const BlogGridWithSidebar = () => {
 
   return (
     <>
-      <Breadcrumb title={"Tin tức"} pages={["tin tức"]} />
+      <Breadcrumb title={"Tin tức"} pages={["tin tức"]} noShadow/>
 
-      <section className="overflow-hidden py-16 border-t dark:border-dark-3">
+      <section className="overflow-hidden py-6">
         <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
           <div className="flex flex-col lg:flex-row gap-7.5">
             {/* <!-- blog grid --> */}

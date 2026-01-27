@@ -13,6 +13,9 @@ import { addItemToWishlist } from "@/redux/features/wishlist-slice";
 const SingleItem = ({ item }: { item: Product }) => {
   const { openModal } = useModalContext();
   const dispatch = useDispatch<AppDispatch>();
+  const productHref = item.slug
+    ? `/shop-details/${item.slug}`
+    : `/shop-details/${item.id}`;
 
   // update the QuickView state
   const handleQuickViewUpdate = () => {
@@ -81,7 +84,7 @@ const SingleItem = ({ item }: { item: Product }) => {
           </div>
 
           <h3 className="font-medium text-foreground ease-out duration-200 hover:text-blue mb-1.5">
-            <Link href="/shop-details"> {item.title} </Link>
+            <Link href={productHref}> {item.title} </Link>
           </h3>
 
           <span className="flex items-center justify-center gap-2 font-medium text-lg">

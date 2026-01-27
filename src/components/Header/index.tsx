@@ -102,7 +102,7 @@ const Header = () => {
                         id="search-mobile"
                         placeholder="Nhập tên sản phẩm hoặc danh mục"
                         autoComplete="off"
-                        className="custom-search w-full rounded-r-[5px] bg-surface !border-l-0 border border-gray-3 dark:border-dark-3 py-2.5 pl-4 pr-10 outline-none ease-in duration-200 text-foreground placeholder:text-muted"
+                        className="custom-search w-full rounded-r-[5px] bg-surface !border-l-0 border border-gray-3 dark:border-dark-3 py-2.5 pl-4 pr-10 outline-none ease-in duration-200 placeholder:text-muted"
                       />
                       <button
                         type="button"
@@ -149,7 +149,7 @@ const Header = () => {
                 <span className="block relative cursor-pointer w-5.5 h-5.5">
                   <span className="du-block absolute right-0 w-full h-full">
                     <span
-                      className={`block relative top-0 left-0 bg-foreground rounded-sm w-0 h-0.5 my-1 ease-in-out duration-200 delay-[0] ${
+                      className={`block relative top-0 left-0 bg-foreground rounded-sm w-0 h-0.5 my-1 ease-in-out duration-200 delay-0 ${
                         !navigationOpen && "!w-full delay-300"
                       }`}
                     />
@@ -168,7 +168,7 @@ const Header = () => {
                   <span className="block absolute right-0 w-full h-full rotate-45">
                     <span
                       className={`block bg-foreground rounded-sm ease-in-out duration-200 delay-300 absolute left-2.5 top-0 w-0.5 h-full ${
-                        !navigationOpen && "!h-0 delay-[0]"
+                        !navigationOpen && "!h-0 delay-0"
                       }`}
                     />
                     <span
@@ -359,7 +359,7 @@ const Header = () => {
                         <path d="M442.9 144C415.6 144 389.9 157.1 373.9 179.2L339.5 226.8C335 233 327.8 236.7 320.1 236.7C312.4 236.7 305.2 233 300.7 226.8L266.3 179.2C250.3 157.1 224.6 144 197.3 144C150.3 144 112.2 182.1 112.2 229.1C112.2 279 144.2 327.5 180.3 371.4C221.4 421.4 271.7 465.4 306.2 491.7C309.4 494.1 314.1 495.9 320.2 495.9C326.3 495.9 331 494.1 334.2 491.7C368.7 465.4 419 421.3 460.1 371.4C496.3 327.5 528.2 279 528.2 229.1C528.2 182.1 490.1 144 443.1 144zM335 151.1C360 116.5 400.2 96 442.9 96C516.4 96 576 155.6 576 229.1C576 297.7 533.1 358 496.9 401.9C452.8 455.5 399.6 502 363.1 529.8C350.8 539.2 335.6 543.9 320 543.9C304.4 543.9 289.2 539.2 276.9 529.8C240.4 502 187.2 455.5 143.1 402C106.9 358.1 64 297.7 64 229.1C64 155.6 123.6 96 197.1 96C239.8 96 280 116.5 305 151.1L320 171.8L335 151.1z"/>
                       </svg>
                       <span className="flex items-center bg-current justify-center font-medium text-2xs absolute -right-2 -top-2.5 w-4.5 h-4.5 rounded-full">
-                        <span className="text-white dark:text-dark font-medium text-2xs">
+                        <span className="text-white dark:text-dark font-medium text-2xs ">
                           {product.length}
                         </span>
                       </span>

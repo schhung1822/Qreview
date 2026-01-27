@@ -13,8 +13,9 @@ const BlogDetailsWithSidebar = () => {
       <Breadcrumb
         title={"Blog Details With Sidebar"}
         pages={["blog details sidebar"]}
+        noShadow
       />
-      <section className="overflow-hidden py-16 border-t">
+      <section className="overflow-hidden py-6">
         <div className="max-w-[1170px] w-full mx-auto px-4 sm:px-8 xl:px-0">
           <div className="flex flex-col lg:flex-row gap-7.5 xl:gap-12.5">
             {/* <!-- blog details --> */}

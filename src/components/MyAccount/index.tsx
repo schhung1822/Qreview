@@ -590,7 +590,7 @@ const MyAccount = () => {
                         name="firstName"
                         id="firstName"
                         placeholder="Jhon"
-                        value="Jhon"
+                        defaultValue="Jhon"
                         className="rounded-md border border-gray-3 dark:border-dark-3 bg-background dark:bg-surface placeholder:text-dark-5 dark:placeholder:text-text-muted text-dark dark:text-foreground w-full py-2.5 px-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
                       />
                     </div>
@@ -605,7 +605,7 @@ const MyAccount = () => {
                         name="lastName"
                         id="lastName"
                         placeholder="Deo"
-                        value="Deo"
+                        defaultValue="Deo"
                         className="rounded-md border border-gray-3 dark:border-dark-3 bg-background dark:bg-surface placeholder:text-dark-5 dark:placeholder:text-text-muted text-dark dark:text-foreground w-full py-2.5 px-5 outline-none duration-200 focus:border-transparent focus:shadow-input focus:ring-2 focus:ring-blue/20"
                       />
                     </div>

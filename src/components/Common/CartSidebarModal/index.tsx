@@ -44,13 +44,13 @@ const CartSidebarModal = () => {
       <div className="flex items-center justify-end">
         <div className="w-full max-w-[500px] shadow-1 bg-background dark:bg-surface px-4 sm:px-7.5 lg:px-11 relative modal-content">
           <div className="sticky top-0 bg-background dark:bg-surface flex items-center justify-between pb-7 pt-4 sm:pt-7.5 lg:pt-11 border-b border-gray-3 mb-7.5">
-            <h2 className="font-medium text-dark text-lg sm:text-2xl">
+            <h2 className="font-medium text-foreground text-lg sm:text-2xl">
               Danh sách yêu thích
             </h2>
             <button
               onClick={() => closeCartModal()}
               aria-label="button for close modal"
-              className="flex items-center justify-center ease-in duration-150 bg-meta text-dark-5 hover:text-dark"
+              className="flex items-center justify-center ease-in duration-150 bg-surface text-foreground"
             >
               <svg
                 className="fill-current"

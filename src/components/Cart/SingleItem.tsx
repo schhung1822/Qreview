@@ -41,7 +41,7 @@ const SingleItem = ({ item }) => {
             </div>
 
             <div>
-              <h3 className="text-dark ease-out duration-200 hover:text-blue">
+              <h3 className="text-foreground ease-out duration-200 hover:text-blue">
                 <a href="#"> {item.title} </a>
               </h3>
             </div>
@@ -50,7 +50,7 @@ const SingleItem = ({ item }) => {
       </div>
 
       <div className="min-w-[180px]">
-        <p className="text-dark">${item.discountedPrice}</p>
+        <p className="text-foreground">{item.discountedPrice} VNĐ</p>
       </div>
 
       <div className="min-w-[275px]">
@@ -106,7 +106,7 @@ const SingleItem = ({ item }) => {
       </div>
 
       <div className="min-w-[200px]">
-        <p className="text-dark">${item.discountedPrice * quantity}</p>
+        <p className="text-foreground">{item.discountedPrice * quantity} VNĐ</p>
       </div>
 
       <div className="min-w-[50px] flex justify-end">

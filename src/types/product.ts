@@ -3,7 +3,14 @@ export type Product = {
   reviews: number;
   price: number;
   discountedPrice: number;
-  id: number;
+  tagName?: string | null;
+  content?: string | null;
+  specs?: {
+    key: string;
+    value: string;
+  }[];
+  slug?: string;
+  id: number | string;
   imgs?: {
     thumbnails: string[];
     previews: string[];

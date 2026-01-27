@@ -12,7 +12,6 @@ export async function POST(req: NextRequest) {
       page_url,
     } = body;
 
-    // 🔐 Lấy IP thật (chuẩn cho Vercel / proxy)
     const ip =
       req.headers.get("x-forwarded-for")?.split(",")[0] ||
       req.headers.get("x-real-ip") ||

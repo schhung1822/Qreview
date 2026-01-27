@@ -15,6 +15,12 @@ const SingleGridItem = ({ item }: { item: Product }) => {
 
   const dispatch = useDispatch<AppDispatch>();
 
+  const formatPrice = (value: number) =>
+    new Intl.NumberFormat("vi-VN").format(value);
+  const productHref = item.slug
+    ? `/shop-details/${item.slug}`
+    : `/shop-details/${item.id}`;
+
   // update the QuickView state
   const handleQuickViewUpdate = () => {
     dispatch(updateQuickView({ ...item }));
@@ -148,12 +154,16 @@ const SingleGridItem = ({ item }: { item: Product }) => {
       </div>
 
       <h3 className="font-medium text-foreground ease-out duration-200 hover:text-blue mb-1.5">
-        <Link href="/shop-details"> {item.title} </Link>
+        <Link href={productHref}> {item.title} </Link>
       </h3>
 
       <span className="flex items-center gap-2 font-medium text-lg">
-        <span className="text-foreground">${item.discountedPrice}</span>
-        <span className="text-dark-4 dark:text-text-muted line-through">${item.price}</span>
+        <span className="text-foreground">
+          {formatPrice(item.price)}đ  - 
+        </span>
+        <span className="text-foreground">
+          {formatPrice(item.discountedPrice)}đ
+        </span>
       </span>
     </div>
   );
