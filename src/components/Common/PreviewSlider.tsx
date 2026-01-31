@@ -1,6 +1,6 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useCallback, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import "swiper/css/navigation";
 import "swiper/css";
 import Image from "next/image";
@@ -13,7 +13,12 @@ const PreviewSliderModal = () => {
 
   const data = useAppSelector((state) => state.productDetailsReducer.value);
 
-  const sliderRef = useRef(null);
+  const previewImages =
+    data?.imgs?.previews && data.imgs.previews.length > 0
+      ? data.imgs.previews
+      : data?.imgs?.thumbnails ?? [];
+
+  const sliderRef = useRef<any>(null);
 
   const handlePrev = useCallback(() => {
     if (!sliderRef.current) return;
@@ -24,6 +29,13 @@ const PreviewSliderModal = () => {
     if (!sliderRef.current) return;
     sliderRef.current.swiper.slideNext();
   }, []);
+
+  useEffect(() => {
+    if (!isModalPreviewOpen) return;
+    if (!sliderRef.current) return;
+    const index = data?.currentImageIndex ?? 0;
+    sliderRef.current.swiper.slideTo(index, 0);
+  }, [isModalPreviewOpen, data?.currentImageIndex]);
 
   return (
     <div
@@ -95,26 +107,29 @@ const PreviewSliderModal = () => {
       </div>
 
       <Swiper ref={sliderRef} slidesPerView={1} spaceBetween={20}>
-        <SwiperSlide>
-          <div className="flex justify-center items-center">
-            <Image
-              src={"/images/products/product-2-bg-1.png"}
-              alt={"product image"}
-              width={450}
-              height={450}
-            />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="flex justify-center items-center">
-            <Image
-              src={"/images/products/product-2-bg-1.png"}
-              alt={"product image"}
-              width={450}
-              height={450}
-            />
-          </div>
-        </SwiperSlide>
+        {previewImages.length > 0 ? (
+          previewImages.map((item, index) => (
+            <SwiperSlide key={`${item}-${index}`}>
+              <div className="flex justify-center items-center">
+                <div className="relative w-[90vw] max-w-[900px] h-[80vh]">
+                  <Image
+                    src={item}
+                    alt={data?.title || "product image"}
+                    fill
+                    sizes="(min-width: 1024px) 900px, 90vw"
+                    className="object-contain"
+                  />
+                </div>
+              </div>
+            </SwiperSlide>
+          ))
+        ) : (
+          <SwiperSlide>
+            <div className="flex justify-center items-center text-white/80">
+              Không có hình ảnh để hiển thị.
+            </div>
+          </SwiperSlide>
+        )}
       </Swiper>
     </div>
   );

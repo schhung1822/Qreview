@@ -13,6 +13,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/thumbs";
 import { addItemToCart } from "@/redux/features/cart-slice";
+import { updateproductDetails } from "@/redux/features/product-details";
 import { updateQuickView } from "@/redux/features/quickView-slice";
 import { useModalContext } from "@/app/context/QuickViewModalContext";
 import { useDispatch } from "react-redux";
@@ -22,6 +23,7 @@ const ShopDetails = () => {
   const [activeColor, setActiveColor] = useState("blue");
   const { openPreviewModal } = usePreviewSlider();
   const [thumbsSwiper, setThumbsSwiper] = useState<any>(null);
+  const [activePreviewIndex, setActivePreviewIndex] = useState(0);
 
   const [isAffiliateOpen, setIsAffiliateOpen] = useState(false);
   const [affiliateLinks, setAffiliateLinks] = useState<
@@ -126,6 +128,11 @@ const ShopDetails = () => {
       isMounted = false;
     };
   }, [slug]);
+
+  useEffect(() => {
+    if (!product) return;
+    dispatch(updateproductDetails({ ...product, currentImageIndex: activePreviewIndex }));
+  }, [product, activePreviewIndex, dispatch]);
 
   useEffect(() => {
     if (!isAffiliateOpen || !product?.id) return;
@@ -257,15 +264,19 @@ const ShopDetails = () => {
                   modules={[Thumbs]}
                   thumbs={{ swiper: thumbsSwiper }}
                   className="w-full"
+                  onSlideChange={(swiper) => setActivePreviewIndex(swiper.activeIndex)}
                 >
                   {(product.imgs?.previews ?? []).map((item, key) => (
                     <SwiperSlide key={key}>
-                      <Image
-                        src={item}
-                        alt="products-details"
-                        width={400}
-                        height={400}
-                      />
+                      <div className="relative w-full h-[360px] sm:h-[420px] lg:h-[460px]">
+                        <Image
+                          src={item}
+                          alt="products-details"
+                          fill
+                          sizes="(min-width: 1024px) 520px, (min-width: 640px) 420px, 90vw"
+                          className="object-contain"
+                        />
+                      </div>
                     </SwiperSlide>
                   ))}
                 </Swiper>
@@ -291,12 +302,15 @@ const ShopDetails = () => {
                       <button
                         className="flex items-center justify-center w-15 sm:w-25 h-15 sm:h-25 overflow-hidden rounded-lg bg-surface dark:bg-surface shadow-1 ease-out duration-200 border-2 border-transparent hover:border-blue"
                       >
-                        <Image
-                          width={50}
-                          height={50}
-                          src={item}
-                          alt="thumbnail"
-                        />
+                        <span className="relative block w-full h-full">
+                          <Image
+                            src={item}
+                            alt="thumbnail"
+                            fill
+                            sizes="(min-width: 1024px) 100px, 20vw"
+                            className="object-cover"
+                          />
+                        </span>
                       </button>
                     </SwiperSlide>
                   ))}

@@ -40,7 +40,7 @@ const BestSeller = () => {
           >
             Xem tất cả
           </Link>
-        </div>
+        </div> 
       </div>
     </section>
   );

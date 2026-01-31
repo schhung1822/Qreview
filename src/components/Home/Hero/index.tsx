@@ -29,7 +29,7 @@ const Hero = () => {
                 <div className="flex items-center gap-14">
                   <div>
                     <h2 className="max-w-[153px] font-semibold text-foreground text-xl mb-20">
-                      <a href="#"> iPhone 14 Plus & 14 Pro Max </a>
+                      <a href="#"> Xiaomi 17 & Xiaomi 17 Pro </a>
                     </h2>
 
                     <div>
@@ -49,7 +49,7 @@ const Hero = () => {
 
                   <div>
                     <Image
-                      src="/images/hero/hero-02.png"
+                      src="/images/hero/hero1.png"
                       alt="mobile image"
                       width={123}
                       height={161}
@@ -61,7 +61,7 @@ const Hero = () => {
                 <div className="flex items-center gap-14">
                   <div>
                     <h2 className="max-w-[153px] font-semibold text-foreground text-xl mb-20">
-                      <a href="#"> Tai nghe không dây </a>
+                      <a href="#"> Loa Xiaomi SoundParty </a>
                     </h2>
 
                     <div>
@@ -81,7 +81,7 @@ const Hero = () => {
 
                   <div>
                     <Image
-                      src="/images/hero/hero-01.png"
+                      src="/images/hero/hero2.png"
                       alt="mobile image"
                       width={123}
                       height={161}

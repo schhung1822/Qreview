@@ -15,4 +15,5 @@ export type Product = {
     thumbnails: string[];
     previews: string[];
   };
+  currentImageIndex?: number;
 };
