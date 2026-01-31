@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
-import mysql from "mysql2/promise";
+import mysql, { RowDataPacket } from "mysql2/promise";
 
 export const runtime = "nodejs";
 
-type CategoryRow = {
+type CategoryRow = RowDataPacket & {
   id: string;
   name: string;
   slug?: string | null;
