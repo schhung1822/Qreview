@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
-import mysql from "mysql2/promise";
+import mysql, { RowDataPacket } from "mysql2/promise";
 
 export const runtime = "nodejs";
 
-type ProductRow = {
+type ProductRow = RowDataPacket & {
   id: string;
   name: string;
   slug?: string | null;
@@ -11,14 +11,14 @@ type ProductRow = {
   price_max: number | null;
 };
 
-type ImageRow = {
+type ImageRow = RowDataPacket & {
   product_id: string;
   image_url: string;
   is_thumbnail: string | null;
   sort_order: number | null;
 };
 
-type ReviewRow = {
+type ReviewRow = RowDataPacket & {
   product_id: string;
   reviews: number;
 };
